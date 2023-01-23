@@ -99,8 +99,50 @@ while j < len(z):
 
 
 
+"""Multi-Dimensional Array"""
+
+from numpy import *
+a = array([[10, 20, 30, 40], [50, 60, 70, 80]])
+n = len(a)
+
+for c in range(n):
+    for r in range(len(a[c])):
+        print(a[c][r])
+    print()
+
+"""Multi- D array using zeros function """
+
+from numpy import *
+x = zeros((3, 3), dtype=int)
+print(x)
+n = len(x)
+
+for i in range(n):
+    for j in range(len(x[i])):
+        print(x[i][j])
+    print()
 
 
+"""Getting input in Multi-D array
+ using zeros function with for loop """
+
+from numpy import *
+m = int(input("Enter no.of rows: "))
+n = int(input("Enter no. of column: "))
+x = zeros((m, n), dtype=int)
+L = len(x)
+print(x)
+
+for m in range(L):
+    for n in range(len(x[m])):
+        E = int(input("Enter elements: "))
+        x[m][n] = E
+
+for m in range(L):
+    for n in range(len(x[m])):
+        print(x[m][n])
+
+print(x)
 
 
 
