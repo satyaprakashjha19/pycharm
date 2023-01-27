@@ -84,3 +84,40 @@ def disp(sh):
 def show():
     return "show function"
 disp(show)
+
+# function with parameter
+
+def add(num1, num2):
+    num3 = num1 + num2
+    return num3
+
+num1, num2 = 5, 15
+
+ans = add(num1, num2)
+print(ans)
+
+def sub(num1, num2):
+    result = num2 - num1
+    return result
+
+num1, num2 = 8, 20
+
+result = sub(num1, num2)
+print(result)
+
+#variable length keywords arguments
+
+def vlka(**kwargs):
+    for key, value in kwargs.items():
+        print(key, value)
+
+vlka(first = 'geeks', middile = 'for', last ='geeks')
+
+
+# Lambda function
+def func1(n):
+    return lambda a: a*n
+
+mydoubler = func1(2)
+
+print(mydoubler(11))
