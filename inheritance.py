@@ -82,9 +82,84 @@ class Employeez(Person2):
         self.salary = salary
         self.post = post
 
+
     # Invoking the __init__ of parent class
         Person2.__init__(self, name, idnumber)
 
 a = Employeez("Rahul", 885522, 20000, "Intern")
 a.display()
+
+# Python example to show the working of multiple
+# Inheritance
+
+class Base1():
+    # constructor
+    def __init__(self):
+        self.str1 = "Geek1"
+        print("Base1")
+class Base2():
+    def __init__(self):
+        self.str2 = "Geek2"
+        print("Base2")
+
+class Derived(Base1, Base2):
+    def __init__(self):
+
+        # Calling / invoking constructor of Base 1
+        # and Base 2
+        Base1.__init__(self)
+        Base2.__init__(self)
+        print(Derived)
+
+    def printstrs(self):
+        print(self.str1, self.str2)
+
+ob = Derived()
+ob.printstrs()
+
+
+# Multilevel inheritance
+# when we have child and grandchild relationship
+
+class Base():
+    # constructor
+    def __init__(self, name):
+        self.name = name
+    # Method to get name
+    def getName(self):
+        return self.name
+
+# Inherited/ Sub class/ child class
+
+class child(Base):
+    # constructor
+    def __init__(self, name, age):
+
+    # Calling/ invoke Base class
+        Base.__init__(self, name)
+        self.age = age
+
+    # Method to get age
+    def getAge(self):
+        return self.age
+
+# Inherited /Sub class/ Grand child class
+
+class Grandchild(child):
+    # constructor
+    def __init__(self, name, age, address):
+        # Invoking child class
+        child.__init__(self, name, age)
+        self.address = address
+
+    # To get address
+
+    def getAddress(self):
+        return self.address
+
+# Driver code
+
+g = Grandchild("Sagar", 25, "India")
+print(g.getName(), g.getAge(), g.getAddress())
+
 
