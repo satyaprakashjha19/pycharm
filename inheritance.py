@@ -166,16 +166,151 @@ print(g.getName(), g.getAge(), g.getAddress())
 # Demonstrate Single inheritance
 
 # Parent class
-class X():
+class X():  # Parent class
     def func1(self):
         print("This function is in X class.")
 # Derived Class
-class Y(X):
+class Y(X):  # Child class
     def func2(self):
         print("This function is in Y class")
 # Driver code
 q = Y()
 q.func1()
 q.func2()
+
+# Multiple inheritance
+
+# Base class1
+
+class Mother:
+    mothername = ""
+
+
+    def mother(self):
+        print(self.mothername)
+
+# Base class2
+
+class Father:
+    fathername = ""
+
+
+    def father(self):
+        print(self.fathername)
+
+# Derived class
+
+class Son(Mother, Father):
+    def parents(self):
+        print("Father", self.fathername)
+        print("Mother", self.mothername)
+
+# Driver code
+s1 = Son()
+s1.fathername = "RAM"
+s1.mothername = "SITA"
+s1.parents()
+
+# Multilevel inheritance
+
+# Base class
+
+class Grandfather:
+    def __init__(self, grandfathername):
+        self.grandfathername = grandfathername
+
+# Intermediate class
+
+class Father(Grandfather):
+    def __init__(self, fathername, grandfathername):
+        self.fathername = fathername
+    # invoking constructor of Grandfather class
+        Grandfather.__init__(self, grandfathername)
+
+# Derived class
+
+class Son(Father):
+    def __init__(self, sonname, fathername, grandfathername):
+        self.sonname = sonname
+    # invoking constructor of Father class
+        Father.__init__(self, fathername, grandfathername)
+
+    def print_name(self):
+        print("Grandfather name: ", self.grandfathername )
+        print("Father name: ", self.fathername)
+        print("Son name: ", self.sonname)
+
+# Driver code
+
+god = Son("sonu", "papa ji", "dada ji" )
+god.print_name()
+
+
+# Hierarchical inheritance
+# When more than one derived class
+# are created from a single base
+
+class Sports:
+    def play(self):
+        print("This is in the Parent class")
+# Derived class 1
+
+class Football(Sports):
+    def play1(self):
+        print("This is in the football/Derived1")
+
+# Derived class 2
+
+class Chess(Sports):
+    def play2(self):
+        print("This is in the Chess/Derived2")
+
+# Driver code
+game = Sports()
+game.play()
+game1 = Football()
+game1.play1()
+game2 = Chess()
+game2.play2()
+
+
+# Hybrid inheritance
+
+class School:
+    def func1(self):
+        print("This function is in school.")
+
+
+class Student1(School):
+    def func2(self):
+        print("This function is in student 1. ")
+
+
+class Student2(School):
+    def func3(self):
+        print("This function is in student 2.")
+
+
+class Student3(Student1, School):
+    def func4(self):
+        print("This function is in student 3.")
+
+
+# Driver's code
+
+object = Student3()
+object.func1()
+object.func2()
+
+
+
+
+
+
+
+
+
+
+
 
 
