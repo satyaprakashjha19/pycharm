@@ -163,3 +163,19 @@ g = Grandchild("Sagar", 25, "India")
 print(g.getName(), g.getAge(), g.getAddress())
 
 
+# Demonstrate Single inheritance
+
+# Parent class
+class X():
+    def func1(self):
+        print("This function is in X class.")
+# Derived Class
+class Y(X):
+    def func2(self):
+        print("This function is in Y class")
+# Driver code
+q = Y()
+q.func1()
+q.func2()
+
+
